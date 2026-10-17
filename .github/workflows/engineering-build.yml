@@ -1,0 +1,35 @@
+name: Engineering lab build
+
+on:
+  push:
+    paths:
+      - 'engineering/**'
+      - '.github/workflows/engineering-build.yml'
+  pull_request:
+    paths:
+      - 'engineering/**'
+      - '.github/workflows/engineering-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engineering-lake-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engineering
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        shell: bash
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Inspect pinned toolchain
+        run: |
+          cat lean-toolchain
+          lake --version
+      - name: Build engineering project
+        run: lake build
