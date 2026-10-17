@@ -31,3 +31,16 @@ The pinned candidate toolchain is `leanprover/lean4:v4.24.0`. Its release existe
 Execution state remains **UNVALIDATED**: the current execution surface used for this run does not provide `lean` / `lake`, so no build output, exit status, `#eval` result, or kernel-acceptance observation is recorded.
 
 Proof Ceiling: source verification of a version identifier does not establish that this lab builds successfully.
+
+## 2026-10-18 — move to shared public repository (static readback; not a build)
+
+- Canonical project path: `YutoriKomeiji/lean4-learning-lab/engineering/`.
+- Migrated from the separate private Zenn authoring copy without deleting the original.
+- Public readback observed the five files: `ProofEngineeringLab.lean`, `lakefile.toml`, `lean-toolchain`, `README.md`, `EVIDENCE.md`.
+- `lakefile.toml` declares `defaultTargets = ["ProofEngineeringLab"]` and `[[lean_lib]] name = "ProofEngineeringLab"`; source file uses the matching basename.
+- `lean-toolchain` currently specifies `leanprover/lean4:v4.24.0`. The historical proof-literacy project at repository root separately uses `v4.33.1`.
+- A dedicated GitHub Actions workflow `.github/workflows/engineering-build.yml` was added with `engineering/**` path filters. Its run list, terminal job result and logs could not be retrieved from the available connector; an empty combined commit-status array is **not** evidence of success or failure.
+- The authoring runtime did not contain `lean`, `lake` or `elan` executables; no local `lake build` was executed.
+- **Decision:** retain `UNVALIDATED` until a real terminal result bound to a commit and recorded logs is reviewed.
+
+When new execution evidence is available, append it under a fresh timestamp rather than rewriting the history above.
