@@ -1,6 +1,14 @@
-# Agent instructions for Lean 4 Proof Literacy Lab
+# Agent instructions for Lean 4 Learning Lab
 
-This repository is a bounded Lean 4 proof-literacy and reproducibility workspace.
+This repository is a public companion to two Zenn Lean 4 Books, with an independently preserved historical proof-literacy experiment at the root and a technical practice Lake project in `engineering/`.
+
+## Two independent project roots
+
+- `./` is the **historical frozen experiment** (Lean `v4.33.1`, `lakefile.lean`, `Lean4ProofLiteracyLab.lean`). Do not move or rewrite its frozen formal inputs, fixtures, or original audit/evidence paths merely to reorganize this repository.
+- `engineering/` is the **hands-on Book project** (Lean `v4.24.0`, `lakefile.toml`, `ProofEngineeringLab.lean`). Use `cd engineering && lake build` for its verification; `lake build` at repository root does not verify engineering.
+- Consult `MIGRATION.md` before treating historical AI-evaluator observations as applying to the renamed repository/rewritten README.
+- Source Zenn Book manuscripts remain in `YutoriKomeiji/zenn-content`; keep the technical Book `published: false` until separately authorized.
+- No claim of a successful engineering build without the actual command, environment, commit, logs, exit status and terminal CI/job outcome.
 
 ## Read first
 
