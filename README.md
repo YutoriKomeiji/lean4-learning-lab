@@ -1,3 +1,45 @@
+# Lean 4 Learning Lab — 入門編・技術編の共通教材
+
+このリポジトリは、Zennの無料Lean 4教材2冊に対応する公開ラボです。**証明の読み方を学び、次に自分でコードを書いて検査する**順序で利用できます。
+
+| 学習コース | 書籍 | 実習 |
+| --- | --- | --- |
+| 入門編 | [中学生でもわかる Lean 4――とっても優しい形式証明入門](https://zenn.dev/dantarg/books/lean4-proof-literacy) | [公開Proof Literacy実験](#入門編の公開実験) |
+| 技術編 | 中学生でも作れる Lean 4――AIと一緒に「動く検証」を作ってみよう（**Zenn公開前・原稿作成中**） | [engineering/](engineering/README.md) |
+
+## 入門編の公開実験
+
+2026年9月12日開始のProof Literacy実験は、既存のルート位置を維持しています。READMEやGitHub上の見せ方と、Leanが実際に証明する命題の違いを調べる教育用実験です。
+
+- [監査・証拠境界](AUDIT.md)
+- [比較実験手順](EXPERIMENT_PROTOCOL.md)
+- [実験用の説明条件](fixtures/)
+- [観測記録](evidence/)
+- [凍結済みのLean形式コア](Lean4ProofLiteracyLab.lean)
+
+**重要:** 旧名 `lean4-proof-literacy-lab` における観測記録は過去の提示条件についてのものです。改名後のroot READMEは別の提示条件であり、過去のAI評価結果を現在のrootへそのまま当てはめません。履歴・固定コミットへの参照は [移行記録](MIGRATION.md) を参照してください。
+
+## 技術編の実習
+
+`engineering/` は独立したLakeプロジェクトで、以下から始めます。
+
+```sh
+git clone https://github.com/YutoriKomeiji/lean4-learning-lab.git
+cd lean4-learning-lab/engineering
+lake build
+```
+
+Lean公式の環境導入: https://lean-lang.org/install/
+
+- 入門実験のroot: Lean `v4.33.1`（凍結済み入力について過去のビルド証拠あり）
+- 技術編の `engineering/`: Lean `v4.24.0`（移設後のビルド結果は未検証、`engineering/EVIDENCE.md` を参照）
+
+**`lake build` の成功は形式入力のビルド範囲に限られ、現実の安全性・AIの説明の正しさ・外部認証を意味しません。**
+
+---
+
+## 旧Proof Literacy Labの説明・実験詳細
+
 # Lean 4 Proof Literacy Lab
 
 Public companion laboratory for the Japanese educational series **「中学生でもわかる Lean 4」**.
