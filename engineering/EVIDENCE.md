@@ -44,3 +44,17 @@ Proof Ceiling: source verification of a version identifier does not establish th
 - **Decision:** retain `UNVALIDATED` until a real terminal result bound to a commit and recorded logs is reviewed.
 
 When new execution evidence is available, append it under a fresh timestamp rather than rewriting the history above.
+
+## 2026-10-18 — GitHub Actions engineering build observed
+
+- Workflow: `Engineering lab build`.
+- Run: https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427
+- Tested commit: `f445a1ee5efb33f1c88d316158b6c5586f11ff0f`.
+- GitHub Actions run state: `completed`; conclusion: `success`.
+- Job: `engineering-lake-build`; conclusion: `success`.
+- Steps `Inspect pinned toolchain` and `Build engineering project`: both reported `success`.
+- Evidence source: GitHub Actions run and jobs metadata. Raw stdout/stderr and explicit process exit code were not retrieved in this observation.
+- Claim ceiling: GitHub-hosted workflow completed its configured engineering build successfully for the specified commit. This does not establish third-party local reproduction, correctness of all Book exercises, or any real-world safety claim.
+- Next: retrieve job logs if available, then audit Book chapter commands against the built lab and independently reproduce on a separate environment.
+
+**Current status:** CI BUILD SUCCESS OBSERVED (commit-bound); THIRD-PARTY REPRODUCTION NOT VERIFIED.
