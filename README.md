@@ -32,7 +32,7 @@ lake build
 Lean公式の環境導入: https://lean-lang.org/install/
 
 - 入門実験のroot: Lean `v4.33.1`（凍結済み入力について過去のビルド証拠あり）
-- 技術編の `engineering/`: Lean `v4.24.0`（移設後のビルド結果は未検証、`engineering/EVIDENCE.md` を参照）
+- 技術編の `engineering/`: Lean `v4.24.0`（[GitHub Actions run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)でビルド成功を確認。対象commitとログは `engineering/EVIDENCE.md` を参照）
 
 **`lake build` の成功は形式入力のビルド範囲に限られ、現実の安全性・AIの説明の正しさ・外部認証を意味しません。**
 
