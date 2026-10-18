@@ -1,6 +1,6 @@
 # Proof Engineering Lab — 実行・再現手順
 
-このディレクトリが技術編『中学生でも作れる Lean 4』の演習用プロジェクトです。**ソースコードと手順は用意済みですが、このリポジトリの `EVIDENCE.md` に成功したLean / Lake実行記録はまだありません。** 以下のコマンドは読者・検証者が実行するための手順であり、実行成功の報告ではありません。
+このディレクトリが技術編『中学生でも作れる Lean 4』の演習用プロジェクトです。**ソースコードと手順は用意済みですが、GitHub Actionsで技術編のビルド成功を確認済みです。対象コミットと検証範囲は `EVIDENCE.md` に記録しています。** 以下のコマンドは読者・検証者が実行するための手順であり、実行成功の報告ではありません。
 
 ## 0. 準備するもの
 
@@ -20,7 +20,7 @@ git clone https://github.com/YutoriKomeiji/lean4-learning-lab.git
 cd lean4-learning-lab/engineering
 ```
 
-Windows PowerShellも、Gitをインストール済みなら同じGitと`cd`のコマンドを使えます。ZIPで取得した場合は、展開先の `drafts/lean4-proof-engineering/lab` へ移動します。
+Windows PowerShellも、Gitをインストール済みなら同じGitと`cd`のコマンドを使えます。ZIPで取得した場合は、展開先の `lean4-learning-lab/engineering` へ移動します。
 
 移動後、フォルダー内に `lean-toolchain`, `lakefile.toml`, `ProofEngineeringLab.lean` があるか確かめてください。
 
@@ -41,7 +41,7 @@ lake --version
 lake build
 ```
 
-`lakefile.toml` に宣言されたライブラリ `ProofEngineeringLab` を対象としてビルドする設定です。**本手順を書いた時点では実際の成功ログがないため、成功したとは主張しません。** 出たメッセージと終了コードを確認してください。
+`lakefile.toml` に宣言されたライブラリ `ProofEngineeringLab` を対象としてビルドする設定です。**GitHub Actionsではビルド成功を確認しています。ただし、読者の端末での成功は各自で確認してください。** 出たメッセージと終了コードを確認してください。
 
 POSIXシェルでは直後に `echo $?`、Windows PowerShellでは `$LASTEXITCODE` で終了コードを確認できます。一般に `0` はプロセス正常終了ですが、何が検査されたかはコマンド・ターゲット・ログと一緒に読みます。
 
@@ -70,7 +70,7 @@ example : double 3 = 6 := by
 
 ## 5. 検証結果を残す
 
-`EVIDENCE.md` はまだ `UNVALIDATED` のため、成功記録を書くには **実際の実行観測** が必要です。少なくとも以下を記録してください。
+CIでの成功と読者自身の環境での再現は別です。手元での成功記録を書くには **実際の実行観測** が必要です。少なくとも以下を記録してください。
 
 ```text
 date/time:
@@ -95,6 +95,6 @@ what was NOT verified:
 
 - リポジトリのソースと手順: **作成済み**
 - 設定の静的整合レビュー: **実施済み**（Lake default targetを宣言済みライブラリ名に合わせた）
-- `lake build` 実行結果: **UNVALIDATED**
+- GitHub Actions `lake build`: **SUCCESS**（run #39051025427、対象コミット `f445a1ee5efb33f1c88d316158b6c5586f11ff0f`）
 - 別環境での第三者再現: **NOT VERIFIED**
-- GitHub CIでのlab実行: **NOT VERIFIED**
+- GitHub CIでのlab実行: **SUCCESS**（[run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)、Build engineering project step 成功）
