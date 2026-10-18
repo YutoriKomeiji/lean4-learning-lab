@@ -58,3 +58,24 @@ When new execution evidence is available, append it under a fresh timestamp rath
 - Next: retrieve job logs if available, then audit Book chapter commands against the built lab and independently reproduce on a separate environment.
 
 **Current status:** CI BUILD SUCCESS OBSERVED (commit-bound); THIRD-PARTY REPRODUCTION NOT VERIFIED.
+
+## 2026-10-18 — raw GitHub Actions job log readback
+
+- Observed [run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427), job ID `117449458630` (`engineering-lake-build`), via GitHub Actions job log.
+- Checked-out commit: `f445a1ee5efb33f1c88d316158b6c5586f11ff0f` (checkout / `git log -1` in the job log).
+- Runner: Ubuntu 24.04.5 LTS (GitHub-hosted).
+- Toolchain: `leanprover/lean4:v4.24.0`.
+- Tool output: `Lake version 5.0.0-src+797c613 (Lean version 4.24.0)`.
+- Working directory: `engineering` (workflow run default).
+- Command: `lake build`.
+- Relevant observed output:
+
+```text
+ℹ [2/3] Built ProofEngineeringLab (187ms)
+info: ProofEngineeringLab.lean:3:0: double (n : Nat) : Nat
+info: ProofEngineeringLab.lean:4:0: 6
+Build completed successfully (3 jobs).
+```
+
+- Job and build step conclusion: `success`; the shell step used `bash -e` and reached successful job completion. The raw log does not print an explicit numeric exit code, so no numeric exit code is asserted here.
+- Claim ceiling: this demonstrates a successful build and the displayed Lean elaboration/evaluation messages **for that commit and CI environment**. It is not independent third-party reproduction or empirical validation of the modeled system.
