@@ -1,10 +1,12 @@
 # 第2章 — 最初の定義：章別実習資料
 
-対応するBook本文：[`02` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`02` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/02-first-definition.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
 既存のdoubleを読み、double 3の予想と#evalの実測値を別々に記録する。
+
+専用Leanソース：[Examples.lean](Examples.lean)（独立typecheck未実施）
 
 ## 基本演習
 1. 共通READMEから基準となる実習環境を用意し、使用したコミットSHAを記録する。
