@@ -1,0 +1,35 @@
+# 第5章 — AIに修正を頼む：章別実習資料
+
+対応するBook本文：[`05` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+共通実行環境：[engineering/README.md](../../README.md)
+
+## この章でできるようになること
+第4章のエラーと最小コードだけをAIへ提示する依頼文を作る。
+
+## 基本演習
+1. 共通READMEから基準となる実習環境を用意し、使用したコミットSHAを記録する。
+2. 第4章のエラーと最小コードだけをAIへ提示する依頼文を作る。
+3. 変更前後のファイル、実際に実行したコマンド、終了結果を別々に記録する。実行できない場合は **NOT RUN** とする。
+
+## 応用課題
+AI案のdiffを確認し、命題の7を6へ戻すことと定義そのものを変えることを区別する。
+
+## 自己採点と解答の観点
+- 設問への回答がコード・差分・観測記録と対応するか。
+- AIからの修正提案はビルド証拠ではない。
+- 作業を戻せる状態を保ったか。故意のエラーを含む版を成功済み基準版に混ぜていないか。
+
+## 実行証拠と境界
+**章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
+
+## 記録テンプレート
+```text
+chapter: 05
+source commit:
+working directory:
+command:
+observed result / NOT RUN:
+files changed:
+actual theorem or expected behavior:
+not proven / unresolved:
+```
