@@ -24,6 +24,14 @@
 
 **高責任領域のモデル学習と、実システムの安全性・適法性・運用承認を混同しない。** 本編の中学生向け難度を変更せず、おまけだけ深める。独立typecheckは未実施。
 
+### Bonus 03 — 仕様変更と承認の版数
+
+- [候補Leanコード](high-assurance/VersionBoundApproval.lean)
+- [演習と解答の観点](high-assurance/VERSIONED_EXERCISES.md)
+- [Proof Ceilingと未検証事項](high-assurance/VERSIONED_AUDIT.md)
+
+仕様変更の前後で「承認者が同じ」ことと「対象の仕様が同じ」ことを分けて考えるサンプル。中学生向けの版数比較から、承認の有効性・改ざん・再評価の設計まで段階的に扱う。未typecheck。
+
 ## 検証手順と証拠
 
 共通Labのtoolchain `leanprover/lean4:v4.24.0` を使う。別環境でリポジトリを取得後、`engineering/` から以下を実行する想定：
