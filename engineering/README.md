@@ -24,6 +24,20 @@ Windows PowerShellも、Gitをインストール済みなら同じGitと`cd`の�
 
 移動後、フォルダー内に `lean-toolchain`, `lakefile.toml`, `ProofEngineeringLab.lean` があるか確かめてください。
 
+## 1.5 再現する対象コミットを選ぶ
+
+この本の実測証拠は、対象コミットが `f445a1ee5efb33f1c88d316158b6c5586f11ff0f` の[GitHub Actions run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)です。**同じソース状態を確かめたい場合**は、上の `git clone` を実行した後、リポジトリのルートで次を実行してください。
+
+```sh
+git checkout f445a1ee5efb33f1c88d316158b6c5586f11ff0f
+cd engineering
+lake build
+```
+
+すでに `engineering/` に移動している場合は、先に `cd ..` でリポジトリのルートへ戻ります。これはGitで取得した場合の手順です。ZIPで取得した場合、`git checkout` は使えません。GitHubのコミット画面から該当revisionのZIPを取得してください。
+
+`main` の最新版を実行する場合は、まず `git rev-parse HEAD` でSHAを記録してください。最新mainの成功と過去の特定runの成功は、同じ観測ではありません。
+
 ## 2. LeanとLakeの存在を確かめる
 
 ```sh
