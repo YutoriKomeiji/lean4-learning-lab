@@ -50,6 +50,8 @@
 
 **Bonus 01 は未typecheckの候補**。実サービスのアクセス制御や認証を実装したという主張はしない。既存のCI成功Evidenceをこの追加ファイルへ流用しない。本編とは独立に発展させ、公開品質は別途判定する。
 
+追加の[Bonus 02：高責任領域の二者承認モデル](bonus/high-assurance/README.md)は、医療・金融・重要インフラ・AI外部操作を題材にした共通の責任境界を学ぶためのもの。[Lean候補コード](bonus/high-assurance/TwoPersonGate.lean)と[監査資料](bonus/high-assurance/AUDIT.md)を分離。**本番認可・安全性・適法性は未証明、typecheck未実施。**
+
 ## 次の実装順
 
 1. 各章READMEの個別Book章リンクをreadback監査し、Book側からも対応する章別教材へ双方向リンクを付ける。
