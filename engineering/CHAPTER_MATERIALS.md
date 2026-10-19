@@ -5,7 +5,7 @@
 ## 運用の区別
 
 - **各章専用の学習資料** は20章分存在する。個別演習・発展課題・解答の観点・記録欄を持つ。
-- **各章専用のLeanソース** は段階的に増やす。現段階で5章に追加したコードは候補であり、専用typecheck結果は未取得。残る15章に実行ソースがあるとは主張しない。
+- **各章専用のLeanソース** は段階的に増やす。現段階で第2・3・6・7・16・17・18章に追加したコードは候補であり、専用typecheck結果は未取得。残る13章に独立実行ソースがあるとは主張しない。
 - 既存の `engineering/ProofEngineeringLab.lean` のCI成功は、[EVIDENCE.md](EVIDENCE.md)に記録された**特定コミット**に限られる。新教材はその証拠を流用しない。
 - 章別ソースは現状の `lake build` ターゲットに自動的に組み込まれていない。検証時には対象パスを指定して実行し、その後build targetの範囲を監査する。
 - 意図的失敗は成功対象と分離する。Book公開は別のHuman Gateであり、未公開を維持。
@@ -20,7 +20,7 @@
 | 04 | 赤いエラーを読む | [章別演習](chapters/04/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 05 | AIに修正を頼む | [章別演習](chapters/05/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 06 | 通るけれど意図が違う定理 | [章別演習](chapters/06/README.md) | [Examples.lean](chapters/06/Examples.lean)（未独立検証） |
-| 07 | ファイルを分ける | [章別演習](chapters/07/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
+| 07 | ファイルを分ける | [章別演習](chapters/07/README.md) | [Basic.lean](chapters/07/Basic.lean) / [Examples.lean](chapters/07/Examples.lean)（編集候補・未検証） |
 | 08 | Lakeを読む | [章別演習](chapters/08/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 09 | テストと証明を分ける | [章別演習](chapters/09/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 10 | Gitで変更を残す | [章別演習](chapters/10/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
@@ -31,7 +31,7 @@
 | 15 | AIの『できた』を監査する | [章別演習](chapters/15/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 16 | 小さな仕様プロジェクト | [章別演習](chapters/16/README.md) | [Examples.lean](chapters/16/Examples.lean)（未独立検証） |
 | 17 | 実装する | [章別演習](chapters/17/README.md) | [Examples.lean](chapters/17/Examples.lean)（未独立検証） |
-| 18 | 壊してみる | [章別演習](chapters/18/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
+| 18 | 壊してみる | [章別演習](chapters/18/README.md) | [基準候補](chapters/18/Before.lean) / [故意の失敗](chapters/18/AfterIntentionalFailure.lean) / [修復候補](chapters/18/AfterRepaired.lean)（未検証） |
 | 19 | CIと再現手順 | [章別演習](chapters/19/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 20 | AUDITして完成させる | [章別演習](chapters/20/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 
@@ -46,8 +46,8 @@
 
 ## 次の実装順
 
-1. 各章READMEから正確なBook章と専用ソースへリンクを張る。
-2. 候補Leanソース5点を固定toolchainで個別typecheckし、ログとSHAを記録する。
+1. 各章READMEの個別Book章リンクをreadback監査し、Book側からも対応する章別教材へ双方向リンクを付ける。
+2. 候補Leanソース（第2・3・6・7・16・17・18章）を固定toolchainで個別typecheckし、ログとSHAを記録する。
 3. 第4・7・18章の失敗・修復を、正常系と隔離された実験資産として追加・実測する。
 4. 残る章のコード・設定・監査用資料を補完し、演習問題と模範解答を分離する。
 5. 章別の証拠、Bookの全章リンク、第三者再現、Zenn表示を確認して公開判定する。
