@@ -52,6 +52,8 @@
 
 追加の[Bonus 02：高責任領域の二者承認モデル](bonus/high-assurance/README.md)は、医療・金融・重要インフラ・AI外部操作を題材にした共通の責任境界を学ぶためのもの。[Lean候補コード](bonus/high-assurance/TwoPersonGate.lean)と[監査資料](bonus/high-assurance/AUDIT.md)を分離。**本番認可・安全性・適法性は未証明、typecheck未実施。**
 
+続編の[Bonus 03：版数に紐づく承認](bonus/high-assurance/VersionBoundApproval.lean)では、承認時の仕様版と現在の仕様版が一致する条件をモデル化する。[段階別演習](bonus/high-assurance/VERSIONED_EXERCISES.md)と[監査表](bonus/high-assurance/VERSIONED_AUDIT.md)を別に用意。**コードは未typecheck、現実の承認再利用可否は本モデルだけでは確定しない。**
+
 ## 次の実装順
 
 1. 各章READMEの個別Book章リンクをreadback監査し、Book側からも対応する章別教材へ双方向リンクを付ける。
