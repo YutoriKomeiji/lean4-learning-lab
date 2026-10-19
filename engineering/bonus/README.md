@@ -16,6 +16,14 @@
 
 この例は、企業の認可システムを安全にする製品ではない。あくまで**小さな形式モデル**であり、ログイン認証、保存先、ネットワーク、権限管理、運用手順などを含まない。実利用するソフトウェアのセキュリティを保証しない。
 
+## Bonus 02 — 高責任領域の二者承認ゲート
+
+- [教材と3段階演習](high-assurance/README.md)
+- [Lean候補ソース](high-assurance/TwoPersonGate.lean)
+- [Proof Ceiling / assurance case](high-assurance/AUDIT.md)
+
+**高責任領域のモデル学習と、実システムの安全性・適法性・運用承認を混同しない。** 本編の中学生向け難度を変更せず、おまけだけ深める。独立typecheckは未実施。
+
 ## 検証手順と証拠
 
 共通Labのtoolchain `leanprover/lean4:v4.24.0` を使う。別環境でリポジトリを取得後、`engineering/` から以下を実行する想定：
