@@ -1,6 +1,6 @@
 # 第11章 — CIでbuildする：章別実習資料
 
-対応するBook本文：[`11` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`11` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/11-ci-build.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
