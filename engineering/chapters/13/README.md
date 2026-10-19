@@ -1,6 +1,6 @@
 # 第13章 — 仕様を小さく切る：章別実習資料
 
-対応するBook本文：[`13` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`13` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/13-small-spec.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
