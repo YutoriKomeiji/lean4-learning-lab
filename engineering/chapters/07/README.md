@@ -19,6 +19,15 @@ doubleの定義をBasic.leanへ移しimportする編集案を作る。
 - moduleの構造を整えることは定理の強化ではない。
 - 作業を戻せる状態を保ったか。故意のエラーを含む版を成功済み基準版に混ぜていないか。
 
+## 独立した分割演習（追加資料）
+
+- [Basic.lean](Basic.lean)：移動先になる定義の候補。
+- [Examples.lean](Examples.lean)：`import ProofEngineeringLab.Basic` を使う候補。
+
+これらは**完成済みLake構成ではなく、編集用の素材**です。元のプロジェクトを保全し、作業用コピーで `engineering/ProofEngineeringLab/Basic.lean` を作成し、そこへ `Basic.lean` の内容を配置してください。元の `ProofEngineeringLab.lean` の `double` 定義だけを削除し、先頭へ `import ProofEngineeringLab.Basic` を追加します。状態遷移や既存の証明は残してください。別の `Examples.lean` は分割方法を理解する参考素材であり、**そのまま置いても既存 `lake build` が自動検査するとは限りません**。
+
+実行前に `git diff` で定義が重複していないか確認し、`engineering/` から `lake build` して終了結果を記録します。定義の移動が数学的な主張の強化につながるわけではありません。この分割版の実行はまだ **NOT VERIFIED** です。
+
 ## 実行証拠と境界
 **章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
 
