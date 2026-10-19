@@ -1,10 +1,12 @@
 # 第17章 — 実装する：章別実習資料
 
-対応するBook本文：[`17` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`17` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/17-implement.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
 StateとCanStepのコンストラクタを読んで対応表を作る。
+
+専用Leanソース：[Examples.lean](Examples.lean)（独立typecheck未実施）
 
 ## 基本演習
 1. 共通READMEから基準となる実習環境を用意し、使用したコミットSHAを記録する。
