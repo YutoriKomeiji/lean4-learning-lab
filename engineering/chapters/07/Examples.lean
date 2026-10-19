@@ -1,7 +1,7 @@
 -- Chapter 07: proposed import counterpart.
--- Run only after arranging the module search path described in chapter README.
+-- Copy Basic.lean into engineering/ProofEngineeringLab/Basic.lean and this file into engineering/Chapter07Demo.lean; compile through a configured Lake target. This source is not part of the current project targets.
 -- Candidate only; not included in the existing CI evidence.
-import Basic
+import ProofEngineeringLab.Basic
 
 #check Chapter07.double
 #eval Chapter07.double 3
