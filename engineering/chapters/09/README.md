@@ -1,6 +1,6 @@
 # 第9章 — テストと証明を分ける：章別実習資料
 
-対応するBook本文：[`09` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`09` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/09-test-and-proof.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
