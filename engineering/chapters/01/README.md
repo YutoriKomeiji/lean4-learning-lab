@@ -1,6 +1,6 @@
 # 第1章 — 作業場を作る：章別実習資料
 
-対応するBook本文：[`01` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`01` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/01-workspace.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
