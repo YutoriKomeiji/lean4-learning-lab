@@ -44,6 +44,12 @@
 
 この応用編は設計候補。実装・実行・第三者再現が済むまで完成扱いしない。
 
+## おまけLean — 本編とは別の発展ルート
+
+本編の中学生向け到達目標は変更しない。[おまけの学習入口](bonus/README.md)を用意した。追加した[Bonus 01：承認ルールの形式モデル](bonus/access-control/AccessControl.lean)は、役割・操作・許可関係を表し、「誰が承認できるか」という形式命題を扱う。専用の[問題・解答](bonus/access-control/EXERCISES.md)と[監査表](bonus/access-control/AUDIT.md)を別々に保管。
+
+**Bonus 01 は未typecheckの候補**。実サービスのアクセス制御や認証を実装したという主張はしない。既存のCI成功Evidenceをこの追加ファイルへ流用しない。本編とは独立に発展させ、公開品質は別途判定する。
+
 ## 次の実装順
 
 1. 各章READMEの個別Book章リンクをreadback監査し、Book側からも対応する章別教材へ双方向リンクを付ける。
