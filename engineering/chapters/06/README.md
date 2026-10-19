@@ -1,10 +1,12 @@
 # 第6章 — 通るけれど意図が違う定理：章別実習資料
 
-対応するBook本文：[`06` の章](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
+対応するBook本文：[`06` の章](https://github.com/YutoriKomeiji/zenn-content/blob/main/books/lean4-proof-engineering/06-passing-but-wrong-theorem.md)
 共通実行環境：[engineering/README.md](../../README.md)
 
 ## この章でできるようになること
 現実の安全性を連想させる名前と実際には弱い命題を比較する。
+
+専用Leanソース：[Examples.lean](Examples.lean)（独立typecheck未実施）
 
 ## 基本演習
 1. 共通READMEから基準となる実習環境を用意し、使用したコミットSHAを記録する。
