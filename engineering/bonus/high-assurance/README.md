@@ -26,6 +26,10 @@ lean bonus/high-assurance/TwoPersonGate.lean
 
 現時点で実行結果・終了コード・typecheckログはない。成功と記録しない。実験時にはコミットSHA、環境、コマンド、終了コード、ログを固定する。
 
+## Bonus 03 — 仕様が更新されたら承認をどう扱う？
+
+[VersionBoundApproval.lean](VersionBoundApproval.lean)は承認を依頼IDと**仕様の版数**へ結びつける追加サンプル。[中学生向け〜設計者向けの演習](VERSIONED_EXERCISES.md)と[監査表](VERSIONED_AUDIT.md)を分離している。数字の一致は実際の本人確認や承認の真正性を証明しない。**未typecheck。**
+
 ## 学習課題と解答の観点
 
 - **入門：** 承認者A・A、承認者A・Bのどちらが「異なる二者」か。解答：A・B。ただし対象リクエストや提案者との関係も確認する。
