@@ -19,6 +19,21 @@ workflowの対象パス、コマンド、ログ取得導線を監査する。
 - 第三者が実施していなければ再現済みとしない。
 - 作業を戻せる状態を保ったか。故意のエラーを含む版を成功済み基準版に混ぜていないか。
 
+## 対象SHAを固定した再現演習
+
+**問題A（基本）：** [run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278) の対象ソースと命令を記録してください。
+
+- 解答：SHA `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8`、working directory `engineering`、Lean v4.24.0、`lake build` と `bash scripts/verify-teaching-examples.sh`。
+- 読者はGitで取得後に指定コミットへ切り替えてから実行する。実行していない場合は `NOT RUN` のままにする。
+
+**問題B（発展）：** このrunの失敗試験と通常ビルドはどう区別される？
+
+- 解答：通常の `lake build` は正常系。第18章の故意の失敗は検査スクリプト内で明示的に拒否を期待し、正常系ターゲットへ混在させない。
+
+**問題C（境界）：** CIの成功が第三者のWindowsやmacOSでの成功も意味するか。
+
+- 解答：意味しない。対象runはGitHub-hosted Ubuntuでの記録。OS別実行は別のEvidenceを要するが、独立した第三者再現は公開必須条件ではない。
+
 ## 実行証拠と境界
 **章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
 
