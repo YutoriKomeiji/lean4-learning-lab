@@ -25,12 +25,12 @@ CanStepへstopped→runningを追加し、従来の禁止遷移命題との衝�
 - [AfterIntentionalFailure.lean](AfterIntentionalFailure.lean)：`restart` を許可したのに、古い禁止遷移定理を残した**意図的な失敗候補**。
 - [AfterRepaired.lean](AfterRepaired.lean)：新仕様に合わせ、許可された遷移を明示する定理へ変更した候補。
 
-3つを同じビルドターゲットへまとめないでください。別々のファイルを意図的に指定して検査し、各対象のコマンド、toolchain、終了結果、ログ、SHAを記録します。**失敗版が失敗すると予想されることは、実際に失敗したEvidenceではありません。** 現時点で追加ファイルの独立検証はすべて **NOT VERIFIED** です。
+3つを同じビルドターゲットへまとめないでください。別々のファイルを意図的に指定して検査し、各対象のコマンド、toolchain、終了結果、ログ、SHAを記録します。失敗するという予測と実測結果は分けます。[Actions run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278) では `Before.lean` と `AfterRepaired.lean` のtypecheck成功、`AfterIntentionalFailure.lean` の `unsolved goals` / `⊢ False` による拒否を観測しました。対象コミットは `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8` です。
 
 解答の重要点は、元の定理を証明できるようにモデルの新仕様を勝手に戻すことではありません。再始動を許す仕様なら、禁止遷移を主張し続けてはいけません。モデル変更後の定理も現実世界の安全性までは証明しません。
 
 ## 実行証拠と境界
-**章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
+**3つの専用ソースについて、正常系・意図した拒否・修復後の正常系をCIで観測済み。** [実測ログと対象範囲](../../EVIDENCE.md)。任意の仕様変更や読者の手元の再現性を実証したものではありません。
 
 ## 記録テンプレート
 ```text
