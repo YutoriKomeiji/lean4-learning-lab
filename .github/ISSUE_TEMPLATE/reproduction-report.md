@@ -2,8 +2,6 @@
 name: "動作・再現結果の報告"
 about: "Lean 4の実行が成功した／失敗した状況を共有する"
 title: "[再現] "
-labels: []
-assignees: []
 ---
 
 ## 対象
