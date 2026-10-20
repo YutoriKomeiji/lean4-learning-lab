@@ -19,6 +19,21 @@ lean-toolchain、lakefile.tomlのdefaultTargetsとlean_libを照合する。
 - ファイルが存在するだけでは実際にビルドされたことにならない。
 - 作業を戻せる状態を保ったか。故意のエラーを含む版を成功済み基準版に混ぜていないか。
 
+## 設定を実物と照合する演習
+
+**問題A（基本）：** `engineering/lakefile.toml` の `defaultTargets` と `[[lean_lib]]` の `name` を比べてください。
+
+- ヒント：大文字・小文字も含めて読む。
+- 解答：現行教材の値はいずれも `ProofEngineeringLab`。設定の記述とbuild成功は別の情報なので、ログも参照する。
+
+**問題B（発展）：** `engineering/chapters/02/Examples.lean` があるだけで、`lake build` の標準ターゲットに含まれるでしょうか。
+
+- 解答：含まれるとは限らない。現行教材は `lake env lean chapters/02/Examples.lean` を追加チェックとして個別実行した。実際の対象は[検査スクリプト](../../scripts/verify-teaching-examples.sh)と[実行ログ](../../EVIDENCE.md)で照合する。
+
+**問題C（境界）：** `lean-toolchain` が固定されている事実だけで、Windowsでも同じ結果だと証明できますか。
+
+- 解答：できない。OS別の導入と実行観測は別の確認項目。
+
 ## 実行証拠と境界
 **章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
 
