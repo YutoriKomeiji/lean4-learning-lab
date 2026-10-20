@@ -1,7 +1,6 @@
 -- Chapter 07: proposed split definition module.
--- Candidate only; this standalone module has not been independently typechecked.
-namespace Chapter07
+-- Copy to engineering/ProofEngineeringLab/Basic.lean.
+-- The top-level name "double" deliberately matches the original lab.
+-- Candidate only; this split variant has not been independently typechecked.
 
 def double (n : Nat) : Nat := n + n
-
-end Chapter07
