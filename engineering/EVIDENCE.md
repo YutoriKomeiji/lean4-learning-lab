@@ -1,16 +1,21 @@
 # Proof Engineering Lab — Evidence Log
 
-Status: **UNVALIDATED**
+**Current summary (updated 2026-10-20):**
+- **Baseline lab CI build: VERIFIED for commit `f445a1ee5efb33f1c88d316158b6c5586f11ff0f`** via [run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427); raw job output recorded below.
+- **Later chapter-specific snippets and bonus files: NOT YET TYPECHECKED / NOT COVERED by that baseline CI run.**
+- **Deliberately failing and repaired variants: NOT YET EXECUTION-VERIFIED.**
+- **Independent third-party reproduction: NOT PERFORMED (optional, not a publication prerequisite).**
+- **Current main as a whole: not claimed to be covered by the historical baseline run.**
 
-This directory is the working project for the companion Proof Engineering Book.
+This directory is the working project for the companion Proof Engineering Book. Earlier entries below are preserved as historical snapshots. In particular, `UNVALIDATED` statements dated before the baseline CI run describe the state **at that time**, not the current baseline verdict.
 
 ## Static Lake configuration audit — 2026-10-17
 
 A repo-source static review found that `defaultTargets` named `proofengineeringlab` while the declared `[[lean_lib]]` target was `ProofEngineeringLab`. The target names were aligned in commit `5685f77f380ce6631c6c96440aa5a3cfa6da9618`. An executable lab README and Book Chapter 1–2 walkthroughs were added in subsequent commits. The current working runtime did **not** contain `lean`, `lake`, or `elan` on PATH. **No actual Lean build was run or observed; status remains UNVALIDATED**. This is a source-level fix, not a proof of successful compilation. Next required step: run the pinned project in a Lean-capable environment and preserve the command, toolchain, build log, exit status, and tested commit SHA.
 
-## Current claim ceiling
+## Historical claim ceiling — 2026-10-17 (superseded for the baseline build)
 
-The files have been written as a candidate minimal Lean project. No successful `lake build`, `#eval`, or kernel acceptance is claimed here yet.
+At this earlier checkpoint, the files had only been written as a candidate minimal Lean project; no successful `lake build`, `#eval`, or kernel-acceptance observation was available **then**. The later successful baseline CI run and its precise scope are documented below.
 
 A later run must execute the pinned toolchain/project and record:
 - environment/toolchain actually used;
