@@ -33,3 +33,6 @@ jobs:
           lake --version
       - name: Build engineering project
         run: lake build
+      - name: Verify book chapter and bonus examples
+        shell: bash
+        run: bash scripts/verify-teaching-examples.sh
