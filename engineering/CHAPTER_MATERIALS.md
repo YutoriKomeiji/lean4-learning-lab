@@ -2,6 +2,14 @@
 
 技術編Book：[`zenn-content/books/lean4-proof-engineering/`](https://github.com/YutoriKomeiji/zenn-content/tree/main/books/lean4-proof-engineering)
 
+## 2026-10-20 品質整備の進捗
+
+- Bookから章別資料への個別リンク：20/20、書き込み後のreadbackを確認。
+- 第7章の分割教材：`double` の名前空間不一致を解消、コピー・import・独立チェック手順を明記。
+- 基準Lab：過去の特定コミットでCI `lake build` 成功（[EVIDENCE](EVIDENCE.md)）。
+- 追加の章別・おまけサンプル：検査CIを追加したが、最新の実行ログは未取得。**検証PASSは主張しない。**
+- 本編の公開：明示的なHuman Gate待ち。第三者の独立再現は任意。
+
 ## 運用の区別
 
 - **各章専用の学習資料** は20章分存在する。個別演習・発展課題・解答の観点・記録欄を持つ。
@@ -56,8 +64,8 @@
 
 ## 次の実装順
 
-1. 各章READMEの個別Book章リンクをreadback監査し、Book側からも対応する章別教材へ双方向リンクを付ける。
-2. 候補Leanソース（第2・3・6・7・16・17・18章）を固定toolchainで個別typecheckし、ログとSHAを記録する。
+1. **完了：** 全20章のBook本文から各章の演習READMEへリンクを付け、保存・readbackし、`published:false` を維持した。
+2. **次の検証：** [検査スクリプト](scripts/verify-teaching-examples.sh)と[Actions workflow](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/workflows/engineering-build.yml)で章別・おまけLeanの正常系、第7章の分割版、第18章の期待される失敗を実測し、対象SHA・ログを記録する。**現時点では検査処理の保存を確認しただけで、新ステップの成功は未観測。**
 3. 第4・7・18章の失敗・修復を、正常系と隔離された実験資産として追加・実測する。
 4. 残る章のコード・設定・監査用資料を補完し、演習問題と模範解答を分離する。
 5. 章別の実測証拠、Bookの全章リンク、読者が試せる再現手順、Zenn表示を確認して公開判定する。独立第三者による実施状況は別欄に記録する。
