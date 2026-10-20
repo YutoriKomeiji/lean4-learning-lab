@@ -1,9 +1,24 @@
 # Proof Engineering Lab — Evidence Log
 
+## 2026-10-20 — verified chapter and bonus checks (latest observed CI)
+
+- Run: https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278
+- Job ID: `118658580934`; `engineering-lake-build` completed successfully; raw job logs inspected.
+- Checked-out source commit: `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8`.
+- Runner: GitHub-hosted Ubuntu 24.04.5 LTS. Toolchain: `leanprover/lean4:v4.24.0`; Lake 5.0.0-src+797c613.
+- Working directory: `engineering/`. Commands: `lake build`; `bash scripts/verify-teaching-examples.sh`.
+- Observed baseline: `Built ProofEngineeringLab` and `Build completed successfully (3 jobs)`.
+- Observed independent source checks: `TYPECHECK_PASS` for chapters 02, 03, 06, 16, 17, 18 Before, 18 AfterRepaired; bonus AccessControl, TwoPersonGate, VersionBoundApproval.
+- Observed chapter 07 isolated module/import variant: `Built ProofEngineeringLab.Basic`, `Build completed successfully (4 jobs)`, then `SPLIT_VARIANT_PASS`.
+- Observed negative test (chapter 18): intentionally contradictory theorem rejected with `error: unsolved goals`, `⊢ False`; script reported `EXPECTED_FAILURE_OBSERVED`.
+- Final script line: `TEACHING_EXAMPLES: SUCCESS (positive checks passed; intended failure rejected)`. CI step and job both concluded `success`. Shell used `bash -e`; raw log did not print a numeric exit code.
+- Proof ceiling: success is limited to the listed files/cases and their tested SHA. It does NOT establish comprehensive Book prose accuracy, OS-by-OS installation success, all chapter exercises/solutions, semantic correspondence of the specification to a real system, or third-party reproduction.
+- Independent third-party reproduction: NOT PERFORMED (optional).
+
 **Current summary (updated 2026-10-20):**
 - **Baseline lab CI build: VERIFIED for commit `f445a1ee5efb33f1c88d316158b6c5586f11ff0f`** via [run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427); raw job output recorded below.
-- **Later chapter-specific snippets and bonus files: NOT YET TYPECHECKED / NOT COVERED by that baseline CI run.**
-- **Deliberately failing and repaired variants: NOT YET EXECUTION-VERIFIED.**
+- **Later chapter-specific snippets and bonus files: VERIFIED ONLY FOR THE FILES LISTED IN THE NEW 2026-10-20 RUN ABOVE; the historical baseline CI did not cover them.**
+- **Chapter 18 intentional failure and repaired source: VERIFIED in the new run above, not in the historical baseline.**
 - **Independent third-party reproduction: NOT PERFORMED (optional, not a publication prerequisite).**
 - **Current main as a whole: not claimed to be covered by the historical baseline run.**
 
