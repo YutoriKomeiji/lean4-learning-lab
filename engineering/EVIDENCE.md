@@ -84,3 +84,11 @@ Build completed successfully (3 jobs).
 
 - Job and build step conclusion: `success`; the shell step used `bash -e` and reached successful job completion. The raw log does not print an explicit numeric exit code, so no numeric exit code is asserted here.
 - Claim ceiling: this demonstrates a successful build and the displayed Lean elaboration/evaluation messages **for that commit and CI environment**. It is not independent third-party reproduction or empirical validation of the modeled system.
+
+## 2026-10-20 — teaching-source check configured; runtime result pending
+
+- Fixed Chapter 07 sample name inconsistency: the split `Basic.lean` now defines the same top-level `double` as the Book's baseline, and `Examples.lean` checks that exact symbol. Confirmed GitHub contents readback, **not** a Lean build result.
+- Created `engineering/scripts/verify-teaching-examples.sh` at commit `90826339784ca080ccadf19936bbda95645d77ad`: proposes per-file typecheck for the independent chapter/bonus sources, an isolated Chapter 07 split-module build and an intentional Chapter 18 failure check.
+- Updated `.github/workflows/engineering-build.yml` at commit `124c96a8b7306dc18514c2d81a38873a107af954` to invoke that script after the existing baseline `lake build`. Readback confirmed the workflow contents.
+- **No latest workflow run ID/job log/terminal result was retrieved in this observation.** The connector's empty combined-status or PR-filtered run lists are not evidence of pass or failure; direct public API access was unavailable. Accordingly, **new teaching-source and negative-case checks remain NOT VERIFIED**.
+- Next: inspect the actual Actions job result for the checked-out SHA and the `Verify book chapter and bonus examples` step; if it failed, fix source or script based on the exact failure log and recheck. Append the tested commit, environment, command, outcome and observed error messages once available.
