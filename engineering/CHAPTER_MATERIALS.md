@@ -30,10 +30,10 @@
 |---|---|---|---|
 | 01 | 作業場を作る | [章別演習](chapters/01/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 02 | 最初の定義 | [章別演習](chapters/02/README.md) | [Examples.lean](chapters/02/Examples.lean)（[指定コミットでtypecheck済み](EVIDENCE.md)） |
-| 03 | 最初の定理 | [章別演習](chapters/03/README.md) | [Examples.lean](chapters/03/Examples.lean)（未独立検証） |
+| 03 | 最初の定理 | [章別演習](chapters/03/README.md) | [Examples.lean](chapters/03/Examples.lean)（[指定コミットでtypecheck済み](EVIDENCE.md)） |
 | 04 | 赤いエラーを読む | [章別演習](chapters/04/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 05 | AIに修正を頼む | [章別演習](chapters/05/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
-| 06 | 通るけれど意図が違う定理 | [章別演習](chapters/06/README.md) | [Examples.lean](chapters/06/Examples.lean)（未独立検証） |
+| 06 | 通るけれど意図が違う定理 | [章別演習](chapters/06/README.md) | [Examples.lean](chapters/06/Examples.lean)（[指定コミットでtypecheck済み](EVIDENCE.md)） |
 | 07 | ファイルを分ける | [章別演習](chapters/07/README.md) | [Basic.lean](chapters/07/Basic.lean) / [Examples.lean](chapters/07/Examples.lean)（[隔離分割版をビルド済み](EVIDENCE.md)） |
 | 08 | Lakeを読む | [章別演習](chapters/08/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 09 | テストと証明を分ける | [章別演習](chapters/09/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
@@ -43,8 +43,8 @@
 | 13 | 仕様を小さく切る | [章別演習](chapters/13/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 14 | AIに実装させ検査する | [章別演習](chapters/14/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 15 | AIの『できた』を監査する | [章別演習](chapters/15/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
-| 16 | 小さな仕様プロジェクト | [章別演習](chapters/16/README.md) | [Examples.lean](chapters/16/Examples.lean)（未独立検証） |
-| 17 | 実装する | [章別演習](chapters/17/README.md) | [Examples.lean](chapters/17/Examples.lean)（未独立検証） |
+| 16 | 小さな仕様プロジェクト | [章別演習](chapters/16/README.md) | [Examples.lean](chapters/16/Examples.lean)（[指定コミットでtypecheck済み](EVIDENCE.md)） |
+| 17 | 実装する | [章別演習](chapters/17/README.md) | [Examples.lean](chapters/17/Examples.lean)（[指定コミットでtypecheck済み](EVIDENCE.md)） |
 | 18 | 壊してみる | [章別演習](chapters/18/README.md) | [基準候補](chapters/18/Before.lean) / [故意の失敗](chapters/18/AfterIntentionalFailure.lean) / [修復候補](chapters/18/AfterRepaired.lean)（[正常系・期待される拒否を実測済み](EVIDENCE.md)） |
 | 19 | CIと再現手順 | [章別演習](chapters/19/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
 | 20 | AUDITして完成させる | [章別演習](chapters/20/README.md) | 本文・既存共通Labを参照。専用ソースは未実装 |
