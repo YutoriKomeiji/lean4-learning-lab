@@ -120,6 +120,17 @@ bash scripts/verify-teaching-examples.sh
 
 **重要：** このスクリプトとCIの追加検査ステップをGitHubへ保存した事実と、最新のCIがそれを成功させた事実は別です。検証ログと対象コミットが確認できるまで、追加ファイルのstatusは **NOT YET VERIFIED** とします。期待どおりの失敗も、ログなしでPASSとはしません。CI結果を確認するときは[ActionsのEngineering lab build](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/workflows/engineering-build.yml)を参照してください。
 
+## 分からないことがあったら（GitHub Issues）
+
+手元で動かした結果や質問は、[GitHub Issuesの新規作成画面](https://github.com/YutoriKomeiji/lean4-learning-lab/issues/new/choose)から報告できます。
+
+- **「教材への質問・改善提案」**：言葉の意味、説明、図、手順について質問する。
+- **「動作・再現結果の報告」**：成功・失敗の両方を報告する。章番号、OS、Leanの版、使ったソースのSHA、実際のコマンド・結果は分かる範囲でよい。
+
+気軽に質問してください。読者による独立した実行報告がまだないことは、この本を公開できない理由にはしません。Issueを書くだけで実行検証済みになるわけでもありません。
+
+**公開上の注意：** コマンドやログへ認証情報、氏名、顧客情報などが含まれている場合は必ず削除してください。
+
 ## 検証ステータス
 
 - リポジトリのソースと手順: **作成済み**
