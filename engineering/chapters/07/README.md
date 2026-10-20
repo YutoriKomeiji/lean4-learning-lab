@@ -51,10 +51,10 @@ lake env lean Chapter07Demo.lean
 
 `Chapter07Demo.lean` は通常の `lake build` に自動的に含まれるとは限らないので、2行目で明示的に検査します。名前の衝突、import先や型の間違いを検査し、失敗したら実際のエラーを残してください。元の状態へ戻す前に成果と差分を確認してください。
 
-今回、分割教材とbook側の名前不整合は修正しましたが、**この変更の実行成功ログはまだ未取得**です。GitHub Actionsの追加チェックも、成功が観測されるまでは完了扱いにしません。
+名前不整合の修正後、[Actions run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278) にて、隔離したコピーで `lake build` と `lake env lean Chapter07Demo.lean` が成功したことをログで確認しました。対象コミットは `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8` です。
 
 ## 実行証拠と境界
-**章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
+**隔離した章別分割サンプル：CI実行検証済み（対象コミット限定）。** [実測ログと検証範囲](../../EVIDENCE.md)を参照してください。読者自身の変更版や全演習の結果までは保証しません。
 
 ## 記録テンプレート
 ```text
