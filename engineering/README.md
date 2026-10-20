@@ -105,6 +105,21 @@ what was NOT verified:
 
 仮に `lake build` が成功しても、その事実だけで「現実の機械が安全」「AIの説明が正しい」「設計全体が正しい」「公開の承認を得た」とは言えません。読んだ命題、定義、依存関係、対象のbuildに限定して評価してください。
 
+## 追加教材を検査する（編集者向け）
+
+このBookには、基本Labとは別に[章別ソースとおまけLean](CHAPTER_MATERIALS.md)があります。基本の `lake build` は、これらの独立したサンプルを**すべて自動で検査するわけではありません**。
+
+Lean v4.24.0を導入済みのmacOS/LinuxまたはBash環境から、`engineering/` で以下を実行すると、追加のサンプルのtypecheck、分割練習のコピー上でのbuild、意図した失敗例の拒否を個別に確認できます。
+
+```sh
+lake build
+bash scripts/verify-teaching-examples.sh
+```
+
+このスクリプトはBash、`mktemp`、`sed`、`cp` などを使用します。Windows PowerShell単体からそのまま実行することを想定していません。WindowsではGit Bash/WSLなどの適切な環境を使用するか、各章READMEにあるLeanコマンドを個別に試してください。
+
+**重要：** このスクリプトとCIの追加検査ステップをGitHubへ保存した事実と、最新のCIがそれを成功させた事実は別です。検証ログと対象コミットが確認できるまで、追加ファイルのstatusは **NOT YET VERIFIED** とします。期待どおりの失敗も、ログなしでPASSとはしません。CI結果を確認するときは[ActionsのEngineering lab build](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/workflows/engineering-build.yml)を参照してください。
+
 ## 検証ステータス
 
 - リポジトリのソースと手順: **作成済み**
