@@ -2,8 +2,6 @@
 name: "教材への質問・改善提案"
 about: "Lean 4の学習で迷った箇所や説明の改善案を伝える"
 title: "[教材] "
-labels: []
-assignees: []
 ---
 
 ## どの教材？
