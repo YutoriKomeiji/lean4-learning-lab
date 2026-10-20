@@ -6,7 +6,7 @@
 ## この章でできるようになること
 現実の安全性を連想させる名前と実際には弱い命題を比較する。
 
-専用Leanソース：[Examples.lean](Examples.lean)（独立typecheck未実施）
+専用Leanソース：[Examples.lean](Examples.lean)（[CI実測記録](../../EVIDENCE.md)にある対象コミットで独立typecheck済み）
 
 ## 基本演習
 1. 共通READMEから基準となる実習環境を用意し、使用したコミットSHAを記録する。
@@ -22,7 +22,7 @@ Actual theorem、Assumptions、Proof Ceiling、NOT provenを4欄で記録する�
 - 作業を戻せる状態を保ったか。故意のエラーを含む版を成功済み基準版に混ぜていないか。
 
 ## 実行証拠と境界
-**章別実習の独立した実行結果：NOT YET VERIFIED。** 既存の[CI成功記録](../../EVIDENCE.md)は基準Labの特定コミットに限る。本章の変更版や追加演習まで検査済みとはしない。
+**添付した専用Leanソース：CIで独立typecheck済み。** [検証記録](../../EVIDENCE.md)にある2026-10-20 run #39431843278・commit `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8` に限定した判定。読者が変更したソースやすべての自由演習の成功を保証するものではない。
 
 ## 記録テンプレート
 ```text
