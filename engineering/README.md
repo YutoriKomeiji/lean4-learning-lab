@@ -26,15 +26,16 @@ Windows PowerShellも、Gitをインストール済みなら同じGitと`cd`の�
 
 ## 1.5 再現する対象コミットを選ぶ
 
-この本の実測証拠は、対象コミットが `f445a1ee5efb33f1c88d316158b6c5586f11ff0f` の[GitHub Actions run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)です。**同じソース状態を確かめたい場合**は、上の `git clone` を実行した後、リポジトリのルートで次を実行してください。
+基準Labの最初の実測証拠は、対象コミットが `f445a1ee5efb33f1c88d316158b6c5586f11ff0f` の[GitHub Actions run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)です。追加教材の検査は、別の[run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278)、コミット `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8` に対応します。**同じソース状態を確かめたい場合**は、上の `git clone` を実行した後、リポジトリのルートで次を実行してください。
 
 ```sh
+cd ..
 git checkout f445a1ee5efb33f1c88d316158b6c5586f11ff0f
 cd engineering
 lake build
 ```
 
-すでに `engineering/` に移動している場合は、先に `cd ..` でリポジトリのルートへ戻ります。これはGitで取得した場合の手順です。ZIPで取得した場合、`git checkout` は使えません。GitHubのコミット画面から該当revisionのZIPを取得してください。
+上のコマンドは、直前の節に従って `engineering/` にいることを前提にしています。最初の `cd ..` でリポジトリのルートへ戻ってからチェックアウトし、最後に `cd engineering` で再び入ります。最初からリポジトリのルートにいる場合は、先頭の `cd ..` を省略してください。作業済みの変更があれば切り替え前に `git status --short` で確認し、勝手に破棄しないでください。これはGitで取得した場合の手順です。ZIPで取得した場合、`git checkout` は使えません。GitHubのコミット画面から該当revisionのZIPを取得してください。
 
 `main` の最新版を実行する場合は、まず `git rev-parse HEAD` でSHAを記録してください。最新mainの成功と過去の特定runの成功は、同じ観測ではありません。
 
@@ -118,7 +119,7 @@ bash scripts/verify-teaching-examples.sh
 
 このスクリプトはBash、`mktemp`、`sed`、`cp` などを使用します。Windows PowerShell単体からそのまま実行することを想定していません。WindowsではGit Bash/WSLなどの適切な環境を使用するか、各章READMEにあるLeanコマンドを個別に試してください。
 
-**重要：** このスクリプトとCIの追加検査ステップをGitHubへ保存した事実と、最新のCIがそれを成功させた事実は別です。検証ログと対象コミットが確認できるまで、追加ファイルのstatusは **NOT YET VERIFIED** とします。期待どおりの失敗も、ログなしでPASSとはしません。CI結果を確認するときは[ActionsのEngineering lab build](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/workflows/engineering-build.yml)を参照してください。
+**実測済みの範囲：** [run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278)（コミット `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8`）のログを確認し、第2・3・6・16・17章の専用ソース、第18章の基準・修復版、Bonus 3ソースのtypecheck、第7章の隔離分割版build、第18章の意図的失敗の拒否を観測しました。指定していないファイルや読者が変更したソースには、この証拠を転用しません。検査スクリプトを保存したという事実だけで成功と判断せず、[EVIDENCE.md](EVIDENCE.md)で対象SHAとログを照合してください。
 
 ## 分からないことがあったら（GitHub Issues）
 
@@ -136,5 +137,7 @@ bash scripts/verify-teaching-examples.sh
 - リポジトリのソースと手順: **作成済み**
 - 設定の静的整合レビュー: **実施済み**（Lake default targetを宣言済みライブラリ名に合わせた）
 - GitHub Actions `lake build`: **SUCCESS**（run #39051025427、対象コミット `f445a1ee5efb33f1c88d316158b6c5586f11ff0f`）
-- 別環境での第三者再現: **NOT VERIFIED**
+- 追加の章別・Bonus検査: **SUCCESS（指定ファイルのみ、run #39431843278、コミット `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8`）**
+- 第7章隔離分割buildと第18章意図的拒否: **OBSERVED（同run）**
+- 別環境での第三者再現: **NOT PERFORMED（任意）**
 - GitHub CIでのlab実行: **SUCCESS**（[run #39051025427](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39051025427)、Build engineering project step 成功）
