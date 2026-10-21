@@ -34,7 +34,15 @@ cp chapters/07/Basic.lean ProofEngineeringLab/Basic.lean
 cp chapters/07/Examples.lean Chapter07Demo.lean
 ```
 
-Windows PowerShellなら `New-Item -ItemType Directory -Force ProofEngineeringLab` でフォルダーを作り、`Copy-Item` でファイルをコピーしてください。上記の `mkdir -p` はPowerShell向けのコマンドではありません。
+Windows PowerShellでは、同じ `engineering/` ディレクトリから次を実行します（上のBash/POSIXコマンドと**どちらか一方だけ**を使用）。
+
+```powershell
+New-Item -ItemType Directory -Path ProofEngineeringLab -Force
+Copy-Item -Path chapters/07/Basic.lean -Destination ProofEngineeringLab/Basic.lean
+Copy-Item -Path chapters/07/Examples.lean -Destination Chapter07Demo.lean
+```
+
+既に同名ファイルがある場合は、上書き前に内容を確認してください。PowerShell単体での**コピー手順**を示したもので、Windowsでのビルド成功を実測したという意味ではありません。
 
 次に `ProofEngineeringLab.lean` だけを編集します。
 
@@ -42,14 +50,14 @@ Windows PowerShellなら `New-Item -ItemType Directory -Force ProofEngineeringLa
 2. 元の `def double (n : Nat) : Nat := n + n` を削除する。**定義を重複させない。**
 3. `#check`・`#eval`・既存の例・状態遷移・定理は残す。
 
-実行前に `git diff` で変更範囲を確認し、`engineering/` から次を実行して各結果を記録してください。
+実行前に `git diff` で変更範囲を確認し、さらに `git status --short` で追加ファイルを確認します。`engineering/` から次を実行して各結果を記録してください。
 
 ```sh
 lake build
 lake env lean Chapter07Demo.lean
 ```
 
-`Chapter07Demo.lean` は通常の `lake build` に自動的に含まれるとは限らないので、2行目で明示的に検査します。名前の衝突、import先や型の間違いを検査し、失敗したら実際のエラーを残してください。元の状態へ戻す前に成果と差分を確認してください。
+`Chapter07Demo.lean` は通常の `lake build` に自動的に含まれるとは限らないので、2行目で明示的に検査します。名前の衝突、import先や型の間違いを検査し、失敗したら実際のエラーを残してください。元の状態へ戻す前に成果と差分を確認してください。作業用コピーであれば元のフォルダーを残しておき、編集前の `ProofEngineeringLab.lean` と比較して、意図せぬ変更を残さないでください。元のリポジトリに直接作った場合は、`git diff` と `git status --short` で対象を確定し、自分で追加したファイルだけを取り消してください。ほかの作業ファイルを一括削除しないでください。
 
 名前不整合の修正後、[Actions run #39431843278](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278) にて、隔離したコピーで `lake build` と `lake env lean Chapter07Demo.lean` が成功したことをログで確認しました。対象コミットは `e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8` です。
 
