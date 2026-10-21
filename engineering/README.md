@@ -37,6 +37,19 @@ lake build
 
 上のコマンドは、直前の節に従って `engineering/` にいることを前提にしています。最初の `cd ..` でリポジトリのルートへ戻ってからチェックアウトし、最後に `cd engineering` で再び入ります。最初からリポジトリのルートにいる場合は、先頭の `cd ..` を省略してください。作業済みの変更があれば切り替え前に `git status --short` で確認し、勝手に破棄しないでください。これはGitで取得した場合の手順です。ZIPで取得した場合、`git checkout` は使えません。GitHubのコミット画面から該当revisionのZIPを取得してください。
 
+**章別演習までCIと同じ版で試したい場合：** 基準版 `f445a1e...` では、後から追加された `chapters/`・`bonus/`・検査スクリプトが存在しない場合があります。追加教材の検査対象は別コミットなので、`engineering/` にいる状態から、次の手順で切り替えてください。作業中の変更があれば先に退避し、`git status --short` の表示を確認してください。
+
+```sh
+cd ..
+git status --short
+git checkout e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8
+cd engineering
+lake build
+bash scripts/verify-teaching-examples.sh
+```
+
+最後の検査スクリプトはBash環境向けです。Windows PowerShell単体での実行手順ではありません。これらは[CIで成功した対象コミットの手順](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278)であり、読者自身の環境での結果は未観測です。
+
 `main` の最新版を実行する場合は、まず `git rev-parse HEAD` でSHAを記録してください。最新mainの成功と過去の特定runの成功は、同じ観測ではありません。
 
 ## 2. LeanとLakeの存在を確かめる
