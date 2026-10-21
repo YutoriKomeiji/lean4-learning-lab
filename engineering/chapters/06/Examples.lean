@@ -1,5 +1,5 @@
 -- Chapter 06: passing theorem versus intended specification.
--- Candidate source: NOT YET TYPECHECKED independently.
+-- CI typecheck observed at commit e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8 (run #39431843278).
 namespace Chapter06
 
 def isSafe (_ : Nat) : Prop := True
