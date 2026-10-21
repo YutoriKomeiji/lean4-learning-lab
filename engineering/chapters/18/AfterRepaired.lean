@@ -1,5 +1,5 @@
 -- Chapter 18: revised proposition after allowing the restart transition.
--- Candidate only; not independently typechecked.
+-- CI typecheck observed at commit e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8 (run #39431843278).
 namespace Chapter18Repaired
 inductive State where
   | idle | running | stopped
