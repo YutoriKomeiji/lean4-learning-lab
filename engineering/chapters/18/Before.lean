@@ -1,5 +1,5 @@
 -- Chapter 18: original specification candidate.
--- NOT separately typechecked; intentionally isolated from the main build.
+-- CI typecheck observed at commit e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8; isolated from main build.
 namespace Chapter18Before
 inductive State where
   | idle | running | stopped
