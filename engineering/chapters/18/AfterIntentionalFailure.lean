@@ -1,6 +1,6 @@
 -- Chapter 18: deliberately broken variant. EXPECTED TO FAIL TYPECHECK.
 -- Do NOT import this in the production library or treat it as a passing example.
--- Actual failure log NOT YET OBSERVED.
+-- Expected rejection actually observed at commit e3dd74d706f1f4ae548fcd2cdb78298c8d74d4a8 (run #39431843278): unsolved goals / False.
 namespace Chapter18Failure
 inductive State where
   | idle | running | stopped
