@@ -21,9 +21,9 @@ AIが仕様や定理を密かに弱める変更をdiffで検出する練習を�
 
 ## 差分から仕様変更を検出する練習
 
-**問題A（基本）：** 作業を始める前後で `git status --short` と `git diff` を使う目的は？
+**問題A（基本）：** `engineering/` から `git status --short`、`git diff -- ProofEngineeringLab.lean`、`git rev-parse HEAD` を実行したとき、それぞれ何が分かりますか。ZIP取得の場合はGit操作ではなく元ソースと編集版を比較します。
 
-- 解答：どのファイルの何が変わったかを確認するため。どちらもLeanの定理の正しさを証明するコマンドではない。
+- 解答：`git status --short` は変更・未追跡ファイル、`git diff` は指定した**追跡済みファイルの未ステージ変更**、`git rev-parse HEAD` は現在のコミットSHAを示す。`git diff` だけでは未追跡ファイルの中身は出ない。どれもLeanの定理の正しさを証明しない。
 
 **問題B（発展）：** 以下は説明用の架空の差分です。依頼が「proofだけ直す」だった場合に採用できますか。
 
