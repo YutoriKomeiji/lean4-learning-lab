@@ -18,7 +18,7 @@
 
 ## AI失敗事例集（公開前・証拠の限界を明示）
 
-[AI_FAILURE_CASEBOOK.md](AI_FAILURE_CASEBOOK.md)に、型検査が通る弱い命題、緑CIの検査範囲漏れ、未実施の架空tacticケースを**実測／静的監査／未実施で区別して**整理した。現時点で「AI実会話3件の実測完了」とは扱わず、証拠が足りないケースは公開前の品質課題として残す。
+[AI_FAILURE_CASEBOOK.md](AI_FAILURE_CASEBOOK.md)に、型検査が通る弱い命題、緑CIの検査範囲漏れ、教育用の架空tacticケースを**Lean実測／CI範囲監査／模擬AI発言**に分けて整理した。架空tacticの拒否と修復版の成功は[run #39716409042](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39716409042)で実測済み。**実際のAI実会話3件の採取は公開必須条件ではない**し、AIが実際にそう発言したとも主張しない。
 
 ## 運用の区別
 
