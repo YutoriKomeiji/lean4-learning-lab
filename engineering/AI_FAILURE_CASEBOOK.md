@@ -45,13 +45,22 @@ end Chapter06
 
 **修正・復旧:** 「緑色」を一括評価せず、workflowの対象・スクリプトの明示パス・実行SHA・各コマンドのログを1対1で照合します。追加ファイルを検査したい場合は、対象ファイルを意図的にtypecheckする手順を別に設計し、実際の結果を取得してからだけステータスを更新します。**CIから漏れた架空の変更ファイルをこのrunで実際に失敗させたとは主張しません。**
 
-## Case C — 実在しないAPI・tacticをAIが提示する【設計のみ／未実行】
+## Case C — 存在しないtacticが提案される【教育用模擬出力／Lean実測済み】
 
-**想定される危険な説明（模擬）：**「Lean 4にこの便利なtacticがあるはずだから、コードへ書けば証明できます」
+**想定される危険な説明（模擬、AI実会話ではない）：**「`nonexistent_casebook_tactic_2026` を使えば証明できる」
 
-この種の誤りを**実行確認済みの教育用例**として載せるには、(1)著者設計の模擬コードを模擬と明記して保存、(2)Lean 4版とSHA、(3)該当ソースの実行コマンドとコンパイラ診断、(4)修正差分、(5)修正後の再実行、が必要です。**AIとの実会話は不要**です。
+**実際のソースと修復差分:**
+- [InventedTacticFailure.lean](chapters/15/InventedTacticFailure.lean)：`double 3 = 6` のproof中で `nonexistent_casebook_tactic_2026` を使用
+- [InventedTacticRepaired.lean](chapters/15/InventedTacticRepaired.lean)：proofを `rfl` に差し替え、命題・定義は変更しない
+- 2つのファイルは**著者が意図的に作った教育用例**。AIが実際に生成した会話記録ではない。
 
-**現時点の判定：NOT RUN / NOT OBSERVED。** 提案コードやエラーメッセージを創作し、Leanが拒否した実績として載せてはいけません。実測が揃った時点でこの節を置き換えること。AIとの実会話を記録していない場合は、あくまで**著者設計の対照教材**と明記して区別します。
+**実行Evidence:** [GitHub Actions run #39716409042](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39716409042)、対象コミット `3a7b7177b008012725541db9a2cd348824397ed7`、GitHub-hosted Ubuntu / pinned Lean v4.24.0、作業ディレクトリ `engineering/`。
+
+- `lake env lean chapters/15/InventedTacticFailure.lean`：意図した失敗。ジョブログは `error: unknown tactic` と `error: unsolved goals` を記録し、検査スクリプトは `EXPECTED_TACTIC_FAILURE_OBSERVED` を出力。
+- `lake env lean chapters/15/InventedTacticRepaired.lean`：`TYPECHECK_PASS` と記録。
+- `bash scripts/verify-teaching-examples.sh` を含む `engineering-lake-build` ジョブは `success` で終了。
+
+**修正の観点:** AIが提示したとされるtactic名を信用せず、エラー・依存・対象命題を確認し、命題を維持した最小の代替proofを別に型検査します。**この教材が示すのは、模擬の存在しないtacticをLeanが拒否し、代替proofが通ったことまで**であり、実際のAIモデルがこの誤りを発生させたという実験結果ではありません。
 
 ## 参考 — 意図したLean拒否は別の実例として実測済み
 
@@ -59,4 +68,4 @@ end Chapter06
 
 ## 公開前のゲート
 
-**実際のAI会話ログの収集は公開の必須条件ではありません。** 教育目的の模擬AI出力と実行されたLeanソースは分けて示します。Case Aはtypecheck済み、Case Bは実際のCI設定・検査対象の監査済み、Case Cはまだ未実行です。Case Cを「Leanで拒否・修復まで検証済み」と呼ぶには、実際の該当ソース・エラーログ・修復後の成功記録が必要です。根拠のない成功・失敗ログを増やさないでください。
+**AI実会話ログの収集は公開の必須条件ではありません。** 3パターンとも教育用の検査方法・証拠境界を記述済み。Case A（弱い命題）はLean typecheck実測、Case B（緑CIの未検査範囲）は実workflow・スクリプト・ログ照合、Case C（架空tactic）は模擬ソースの実拒否・修復版のtypecheckまで実測済み。ただし**「AIが実際に3種類の誤りを生成した」実験は行っていない**。実表示QA、読者動線・リンク確認、および最終監査は別途必要。
