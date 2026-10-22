@@ -18,6 +18,7 @@ for file in \
   chapters/17/Examples.lean \
   chapters/18/Before.lean \
   chapters/18/AfterRepaired.lean \
+  chapters/15/InventedTacticRepaired.lean \
   bonus/access-control/AccessControl.lean \
   bonus/high-assurance/TwoPersonGate.lean \
   bonus/high-assurance/VersionBoundApproval.lean
@@ -61,4 +62,18 @@ if ! grep -q 'error:' "$failure_log"; then
   exit 1
 fi
 echo "EXPECTED_FAILURE_OBSERVED: intentional theorem contradiction was rejected"
+echo "EXPECTED_TACTIC_FAILURE_BEGIN: chapters/15/InventedTacticFailure.lean"
+tactic_log="$stage/invented-tactic-failure.log"
+if lake env lean chapters/15/InventedTacticFailure.lean >"$tactic_log" 2>&1; then
+  cat "$tactic_log"
+  echo "EXPECTED_TACTIC_FAILURE_MISSING: invented tactic unexpectedly accepted" >&2
+  exit 1
+fi
+cat "$tactic_log"
+if ! grep -q 'error:' "$tactic_log"; then
+  echo "EXPECTED_TACTIC_DIAGNOSTIC_UNKNOWN: rejection lacked Lean error marker" >&2
+  exit 1
+fi
+echo "EXPECTED_TACTIC_FAILURE_OBSERVED: mock invented tactic rejected"
+
 echo "TEACHING_EXAMPLES: SUCCESS (positive checks passed; intended failure rejected)"
