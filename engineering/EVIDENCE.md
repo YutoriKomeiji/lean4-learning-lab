@@ -1,5 +1,16 @@
 # Proof Engineering Lab — Evidence Log
 
+## 2026-10-22 — educational mock tactic rejection and repair
+
+- [GitHub Actions run #39716409042](https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39716409042), job `119619466068` completed **success**.
+- Source commit `3a7b7177b008012725541db9a2cd348824397ed7`, directory `engineering/`, pinned Lean v4.24.0.
+- `lake env lean chapters/15/InventedTacticFailure.lean`: job log shows `error: unknown tactic`, `error: unsolved goals` and `EXPECTED_TACTIC_FAILURE_OBSERVED`.
+- `lake env lean chapters/15/InventedTacticRepaired.lean`: job log shows `TYPECHECK_PASS`.
+- `bash scripts/verify-teaching-examples.sh`: final `TEACHING_EXAMPLES: SUCCESS`; run concludes success because the negative test's rejection was expected.
+- Source was **deliberately authored as a simulated AI failure**, not captured from real AI conversation. This is a controlled Lean negative/repaired test, **not evidence of an AI model error rate**.
+- Proof Ceiling: only the toy statement and the indicated rejection/repaired check; no general reliability or external applicability.
+
+
 ## 2026-10-20 — verified chapter and bonus checks (latest observed CI)
 
 - Run: https://github.com/YutoriKomeiji/lean4-learning-lab/actions/runs/39431843278
