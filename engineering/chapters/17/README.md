@@ -27,7 +27,7 @@ StateとCanStepのコンストラクタを読んで対応表を作る。
 
 - 解答：`start` は idle→running、`stop` は running→stopped、`stayStopped` は stopped→stopped。
 
-**問題B（発展）：** `stopped_cannot_restart` が `cases h` で閉じるのはなぜでしょう。
+**問題B（発展）：** `stopped_cannot_step_to_running` が `cases h` で閉じるのはなぜでしょう。
 
 - ヒント：`h : CanStep .stopped .running` を作れるコンストラクタを探す。
 - 解答：宣言された `CanStep` にはその入力・出力に一致するコンストラクタがない。したがって仮定 `h` の場合分けに残るケースがなく、矛盾を示せる。
