@@ -5,7 +5,9 @@
 | 学習コース | 書籍 | 実習 |
 | --- | --- | --- |
 | 入門編 | [中学生でもわかる Lean 4――とっても優しい形式証明入門](https://zenn.dev/dantarg/books/lean4-proof-literacy) | [公開Proof Literacy実験](#入門編の公開実験) |
-| 技術編 | 中学生でも作れる Lean 4――AIと一緒に「動く検証」を作ってみよう（**Zenn公開前・原稿作成中**） | [engineering/](engineering/README.md) |
+| 技術編 | [中学生でも作れる Lean 4――AIと一緒に「動く検証」を作ってみよう（全20章・無料）](https://zenn.dev/dantarg/books/lean4-proof-engineering) | [実践プロジェクトと実行案内](engineering/README.md) |
+
+**公開状況（2026-10-25）：** 入門編・技術編の両方をZennで無料公開しています。紹介記事は [入門編](https://zenn.dev/dantarg/articles/lean4-free-book-announcement) と [技術編](https://zenn.dev/dantarg/articles/lean4-engineering-book-announcement) を参照してください。技術編の[全20章の演習一覧](engineering/CHAPTER_MATERIALS.md)、[検証記録](engineering/EVIDENCE.md)にもここから進めます。公開済みという表示は全環境での実行成功や安全認証を意味しません。
 
 ## 入門編の公開実験
 
