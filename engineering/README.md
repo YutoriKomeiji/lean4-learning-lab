@@ -1,6 +1,6 @@
 # Proof Engineering Lab — 実行・再現手順
 
-このディレクトリが技術編『中学生でも作れる Lean 4』の演習用プロジェクトです。**ソースコードと手順があり、GitHub Actionsで技術編のビルド成功を確認済みです。** 対象コミットと検証範囲は [EVIDENCE.md](EVIDENCE.md) に記録しています。以下は読者自身の環境で再現するための手順であり、手元での成功を保証するものではありません。
+このディレクトリが無料公開中の[技術編Book『中学生でも作れる Lean 4――AIと一緒に「動く検証」を作ってみよう』（全20章）](https://zenn.dev/dantarg/books/lean4-proof-engineering)の演習用プロジェクトです。[Bookの紹介記事](https://zenn.dev/dantarg/articles/lean4-engineering-book-announcement)と[章別の実習一覧](CHAPTER_MATERIALS.md)も参照してください。**ソースコードと手順があり、GitHub Actionsで技術編のビルド成功を確認済みです。** 対象コミットと検証範囲は [EVIDENCE.md](EVIDENCE.md) に記録しています。以下は読者自身の環境で再現するための手順であり、手元での成功を保証するものではありません。
 
 ## 0. 準備するもの
 
