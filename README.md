@@ -9,6 +9,14 @@
 
 **公開状況（2026-10-25）：** 入門編・技術編の両方をZennで無料公開しています。紹介記事は [入門編](https://zenn.dev/dantarg/articles/lean4-free-book-announcement) と [技術編](https://zenn.dev/dantarg/articles/lean4-engineering-book-announcement) を参照してください。技術編の[全20章の演習一覧](engineering/CHAPTER_MATERIALS.md)、[検証記録](engineering/EVIDENCE.md)にもここから進めます。公開済みという表示は全環境での実行成功や安全認証を意味しません。
 
+## Maintenance policy (DAN-106; 2026-10-25)
+
+入門編・技術編とも制作・初回公開フェーズは完了し、この教材リポジトリは**公開資料の保守運用**に移りました。教材への質問・再現報告・誤記・リンク切れ・toolchain/CI互換性などが発生したとき、[DAN-106](https://linear.app/dantarg/issue/DAN-106)の現行方針に従って修正します。
+
+- [技術編の再現手順](engineering/README.md)、[章別演習](engineering/CHAPTER_MATERIALS.md)、[観測済みEvidence](engineering/EVIDENCE.md)を区別して参照してください。
+- CI成功は対象SHA・toolchain・build/検査対象に限定した観測であり、すべての章・環境・現実世界の安全性を保証しません。
+- 定期SESSION WATCHはread-onlyの状態報告のみ。公開済み文書の更新やCI実行などはマスターの明示指示と必要なHuman Gateの下で行います。
+
 ## 入門編の公開実験
 
 2026年9月12日開始のProof Literacy実験は、既存のルート位置を維持しています。READMEやGitHub上の見せ方と、Leanが実際に証明する命題の違いを調べる教育用実験です。
