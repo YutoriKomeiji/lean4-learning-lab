@@ -58,7 +58,7 @@ lake build
 
 ## 第05〜14章のコード候補を収録（2026-11-18）
 
-[MathlibLearningLab.lean](MathlibLearningLab.lean)を拡張し、第05章の`rw`/`simp only`から第14章の前提付き不等式まで、**16個の`example`候補と自作補題2件**を含めました（既存の3例も含む）。
+[MathlibLearningLab.lean](MathlibLearningLab.lean)を拡張し、第05章の`rw`/`simp only`から第14章の前提付き不等式まで、**20個の`example`候補と自作補題2件**を含めました（既存の3例も含む）。
 
 このファイルは`[[lean_lib]] name = "MathlibLearningLab"`で宣言された**default target**なので、依存解決後に`mathlib/`から実行する`lake build`の検査対象候補です。章10の`exact?`/`apply?`探索実験は検索結果が環境依存のため、まず原稿内の観察課題として扱い、実行ログを得る前に成果を断定しません。
 
