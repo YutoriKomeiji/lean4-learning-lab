@@ -56,6 +56,14 @@ lake build
 
 「Mathlibをimportした」「Leanのビルドが通った」だけで実世界の安全性・法的適合・運用成果・認証を証明したことにはなりません。詳しい考え方は既刊[Proof Literacy入門Book](https://zenn.dev/dantarg/books/lean4-proof-literacy)に譲り、このLabでは定理検索と実際の適用を主題にします。
 
+## 第05〜14章のコード候補を収録（2026-11-18）
+
+[MathlibLearningLab.lean](MathlibLearningLab.lean)を拡張し、第05章の`rw`/`simp only`から第14章の前提付き不等式まで、**16個の`example`候補と自作補題2件**を含めました（既存の3例も含む）。
+
+このファイルは`[[lean_lib]] name = "MathlibLearningLab"`で宣言された**default target**なので、依存解決後に`mathlib/`から実行する`lake build`の検査対象候補です。章10の`exact?`/`apply?`探索実験は検索結果が環境依存のため、まず原稿内の観察課題として扱い、実行ログを得る前に成果を断定しません。
+
+**重要：** ファイルの保存とGitHubでのreadbackは成功しましたが、Lean/Lakeでのtypecheckはまだ行っていません。第05〜14章の成功を主張するものではありません。実行時には使用したソースSHAを記録し、失敗例も含めて監査ログを残してください。
+
 ## 公開・証拠の境界
 
 本ディレクトリは**公開リポジトリ内の作業ブランチに置いた候補ソース**であり、Zenn Bookの公開・mainへのmerge・検証完了を意味しません。凍結済みのroot、公開技術編、既存の証拠ファイルは変更しません。
