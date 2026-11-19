@@ -130,4 +130,9 @@ example : (2 : ℝ) * (-1) ≤ 1 * (-1) := by
 -- Do not infer (1 * -1 ≤ 2 * -1) from 1 ≤ 2:
 -- this would assert -1 ≤ -2 and is deliberately NOT a theorem here.
 
+-- Ch14: refute the invalid inequality, rather than leaving it as prose.
+-- This is a candidate proof, not a recorded typecheck result.
+example : ¬ ((1 : ℝ) * (-1) ≤ (2 : ℝ) * (-1)) := by
+  norm_num
+
 end MathlibLearningLab
