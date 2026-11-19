@@ -112,4 +112,22 @@ theorem preserves_order_when_nonnegative (a b c : ℝ)
     a * c ≤ b * c := by
   exact mul_le_mul_of_nonneg_right hab hc
 
+-- Ch14: inspect the exact named theorem and its axiom dependencies.
+-- These commands print diagnostics; their presence does not certify the
+-- mathematical model or prove that this source has been typechecked.
+#check preserves_order_when_nonnegative
+#print preserves_order_when_nonnegative
+#print axioms preserves_order_when_nonnegative
+
+-- The nonnegative-multiplier assumption is necessary.
+-- For a negative multiplier, the inequality reverses direction.
+example : (1 : ℝ) ≤ 2 := by
+  norm_num
+
+example : (2 : ℝ) * (-1) ≤ 1 * (-1) := by
+  norm_num
+
+-- Do not infer (1 * -1 ≤ 2 * -1) from 1 ≤ 2:
+-- this would assert -1 ≤ -2 and is deliberately NOT a theorem here.
+
 end MathlibLearningLab
