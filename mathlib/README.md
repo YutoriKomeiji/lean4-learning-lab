@@ -1,6 +1,6 @@
 # Mathlib Learning Lab — DAN-106 新刊用・独立した実習環境（作業ブランチ）
 
-**Status: CANDIDATE / NOT TYPECHECKED in this writing run / NOT a published Book release.**
+**Status: CANDIDATE BOOK / LAB BUILD VERIFIED on 2026-11-22 for the tested commit / NOT a published Book release.**
 
 このディレクトリは、同じ公開リポジトリ内の**第3の独立したLakeプロジェクト**です。
 
@@ -13,11 +13,11 @@
 - Lean toolchain：`leanprover/lean4:v4.24.0`
 - Mathlib：GitHub `leanprover-community/mathlib4` の `v4.24.0` タグをLake設定で指定。
 - 2026-11-18参照時点で、当該Mathlibタグはcommit `f897ebcf72cd16f89ab4577d0c826cd14afaafc7` を指し、上流タグの `lean-toolchain` は同じLean `v4.24.0` を指定していました。
-- **未固定の点：** `lake-manifest.json` は生成・保存していません。依存関係の推移的な解決状態について、再現可能なlockfile完成をまだ主張しません。
+- **解決済み依存：** Actionsで生成された[`lake-manifest.json`](lake-manifest.json)（9パッケージ、blob SHA `30a064dbe9c31c8f7736034998bf986bc9856bde`）をこの作業ブランチに保存しました。元の実行artifactとの一致を確認済みです。固定版でのLabビルドと独立した探索実験の実測は[`EVIDENCE.md`](EVIDENCE.md)を参照してください。
 
 [Mathlib公式Wiki「Using mathlib4 as a dependency」](https://github.com/leanprover-community/mathlib4/wiki/Using-mathlib4-as-a-dependency)のLake/TOML設定とcache利用案内に準じています。
 
-## 実行手順（未実行の候補）
+## 読者用の再現手順（制作側ではCIで限定的に実測済み）
 
 まずLean公式の手順に従ってelan/Lean/Lakeを導入してください： https://lean-lang.org/install/
 
@@ -28,16 +28,16 @@ git checkout work/dan106-mathlib-lab-20261118
 cd mathlib
 cat lean-toolchain
 lake --version
-lake update
+test -f lake-manifest.json  # 配布された依存固定ファイルがあることを確認
 lake exe cache get
-lake build
+lake build MathlibLearningLab
 ```
 
 `lake exe cache get` はMathlibの既存のビルド成果物を取得するための推奨手順であり、実行環境・接続状況に応じてダウンロードのコストがかかります。毎回の無駄なフルビルドを避けてください。
 
-**重要：** 上記は読者・制作者向けの再現候補です。この執筆環境には `lean`、`lake`、`elan` が存在せず、今回のファイルはまだLeanで検査していません。実行ログ／終了コード／対象SHAがそろうまでは `VERIFIED` としません。
+**検証範囲：** 制作側は2026-11-22にGitHub Actionsで`lake build MathlibLearningLab`成功を実測しました。記録は[`EVIDENCE.md`](EVIDENCE.md)に保存されています。上記のclone手順を第三者の別環境で追試した結果は未取得です。執筆環境のLean実行可否と、GitHub Actions上でのtypecheck結果を混同しません。
 
-初回成功後、依存解決された `lake-manifest.json`、対象commit SHA、Lean/Lake/Mathlibの版、使用環境、実行ログ、終了コード、検査範囲を`EVIDENCE.md`に記録します。追加のGitHub Actions実行は、workflow・コスト・最新失敗状況を事前点検してから行います。
+実行済みの対象commit SHA、版、manifest、CIログ・検査範囲は[`EVIDENCE.md`](EVIDENCE.md)に記録しました。依存変更を意図しない通常の再現では無条件に`lake update`を行わず、固定manifestを利用してください。
 
 ## 教材の入り口
 
@@ -60,9 +60,9 @@ lake build
 
 [MathlibLearningLab.lean](MathlibLearningLab.lean)を拡張し、第05章の`rw`/`simp only`から第14章の前提付き不等式まで、**20個の`example`候補と自作補題2件**を含めました（既存の3例も含む）。
 
-このファイルは`[[lean_lib]] name = "MathlibLearningLab"`で宣言された**default target**なので、依存解決後に`mathlib/`から実行する`lake build`の検査対象候補です。章10の`exact?`/`apply?`探索実験は検索結果が環境依存のため、まず原稿内の観察課題として扱い、実行ログを得る前に成果を断定しません。
+このファイルは`[[lean_lib]] name = "MathlibLearningLab"`で宣言された**default target**であり、`mathlib/`からのビルド成功を実測済みです。第10章の`exact?`/`apply?`は独立ファイルで実行され、提案と終了コードを[`EVIDENCE.md`](EVIDENCE.md)へ記録しました。別の命題や版でも同じ提案になるとは限りません。
 
-**重要：** ファイルの保存とGitHubでのreadbackは成功しましたが、Lean/Lakeでのtypecheckはまだ行っていません。第05〜14章の成功を主張するものではありません。実行時には使用したソースSHAを記録し、失敗例も含めて監査ログを残してください。
+**重要：** `MathlibLearningLab.lean`内に実際に含まれる例と定理については、固定版のLabビルド成功を確認しています。ただし、書籍の第05〜14章の**全コードブロックをそれぞれ独立したファイルとして検査したわけではありません**。教材の文章や現実の数学的モデルへの一般化は、別途レビューが必要です。
 
 ## 公開・証拠の境界
 
